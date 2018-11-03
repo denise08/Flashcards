@@ -14,6 +14,7 @@
 		54053ADE2172900B00001BBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54053ADC2172900B00001BBA /* LaunchScreen.storyboard */; };
 		54053AE92172900C00001BBA /* FlashcardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54053AE82172900C00001BBA /* FlashcardsTests.swift */; };
 		54053AF42172900C00001BBA /* FlashcardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54053AF32172900C00001BBA /* FlashcardsUITests.swift */; };
+		54ADAB58218DFB5600210FCE /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ADAB57218DFB5600210FCE /* CreationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		54053AEF2172900C00001BBA /* FlashcardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashcardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54053AF32172900C00001BBA /* FlashcardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsUITests.swift; sourceTree = "<group>"; };
 		54053AF52172900C00001BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54ADAB57218DFB5600210FCE /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				54053AD32172900800001BBA /* AppDelegate.swift */,
 				54053AD52172900800001BBA /* ViewController.swift */,
 				54053AD72172900800001BBA /* Main.storyboard */,
+				54ADAB57218DFB5600210FCE /* CreationViewController.swift */,
 				54053ADA2172900B00001BBA /* Assets.xcassets */,
 				54053ADC2172900B00001BBA /* LaunchScreen.storyboard */,
 				54053ADF2172900B00001BBA /* Info.plist */,
@@ -258,6 +261,7 @@
 			files = (
 				54053AD62172900800001BBA /* ViewController.swift in Sources */,
 				54053AD42172900800001BBA /* AppDelegate.swift in Sources */,
+				54ADAB58218DFB5600210FCE /* CreationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
