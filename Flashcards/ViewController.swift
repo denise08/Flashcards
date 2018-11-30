@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
+    @IBOutlet weak var card: UIView!
     //Array to hold our flashcards
     var flashcards = [Flashcard]()
     
@@ -44,7 +45,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didTapOnFlashcard(_ sender: Any) {
-        frontLabel.isHidden = true;
+        flipFlashcard()
+    }
+    
+    func flipFlashcard() {
+        frontLabel.isHidden = true
+        
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
+            self.frontLabel.isHidden = true
+        })
     }
     
     func updateFlashcard(question: String, answer: String){
@@ -88,6 +97,10 @@ class ViewController: UIViewController {
         currentIndex = currentIndex - 1
         updateLabels()
         updateNextPrevButtons()
+        
+        animateCardOutToLeft()
+        
+        
     }
     
     
@@ -101,6 +114,8 @@ class ViewController: UIViewController {
         
         //Update Buttons
         updateNextPrevButtons()
+        
+        animateCardOutToRight()
     }
     
     func updateNextPrevButtons() {
@@ -155,10 +170,48 @@ class ViewController: UIViewController {
             flashcards.append(contentsOf: savedCards)
         }
         
-        
-       
     }
     
+    func animateCardOutToRight(){
+        UIView.animate(withDuration: 0.3, animations: {self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)}, completion: { finished in
+            
+            //Update Labels
+            self.updateLabels()
+            
+            //Run other animation
+            self.animateCardInFromLeft()
+        })
+    }
     
+    func animateCardInFromLeft(){
+        //Start on the right side (don't want to animate this)
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        
+        //Animate card going back to its original position
+        UIView.animate(withDuration: 0.3) {
+            self.card.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func animateCardOutToLeft(){
+        UIView.animate(withDuration: 0.3, animations: {self.card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)}, completion: { finished in
+            
+            //Update Labels
+            self.updateLabels()
+            
+            //Run other animation
+            self.animateCardInFromRight()
+        })
+    }
+    
+    func animateCardInFromRight(){
+        //Start on the right side (don't want to animate this)
+        card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        
+        //Animate card going back to its original position
+        UIView.animate(withDuration: 0.3) {
+            self.card.transform = CGAffineTransform.identity
+        }
+    }
 }
 
